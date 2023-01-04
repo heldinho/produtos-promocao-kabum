@@ -4,9 +4,11 @@
 
 .card {
   padding: 20px;
+  width: 100%;
 }
 
 .box-img {
+  width: 100%;
   text-align: center;
   margin-bottom: 15px;
   border-bottom: 1px solid #e1e1e1;
@@ -15,6 +17,7 @@
 img {
   width: 150px;
   height: 150px;
+  margin-bottom: 15px;
 }
 
 .prices {
