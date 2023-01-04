@@ -1,16 +1,16 @@
-import "./styles.css";
-import data from "./data/products_kabum.json";
-import "bootstrap/dist/css/bootstrap.min.css";
+import './styles.css';
+import data from './data/products_kabum.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const columnCards = [
-  "col-xl-4",
-  "col-lg-4",
-  "col-md-6",
-  "col-sm-6",
-  "col-xs-6",
-  "mb-4",
-  "d-flex",
-  "align-items-stretch"
+  'col-xl-4',
+  'col-lg-4',
+  'col-md-6',
+  'col-sm-6',
+  'col-xs-6',
+  'mb-4',
+  'd-flex',
+  'align-items-stretch',
 ];
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
       </div>
       <div className="row">
         {data.map((item, i) => (
-          <div className={columnCards.join(" ")} key={i}>
+          <div className={columnCards.join(' ')} key={i}>
             <div className="card">
               <div className="box-img">
                 <img src={item.url_image} alt={item.description} />
@@ -40,8 +40,7 @@ export default function App() {
                     href={item.link_product}
                     className="btn btn-link"
                     role="button"
-                    target="_blank"
-                  >
+                    target="_blank">
                     Acessar
                   </a>
                 </div>
