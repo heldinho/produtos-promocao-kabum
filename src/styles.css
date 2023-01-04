@@ -1,0 +1,47 @@
+.total {
+  padding: 10px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.box-img {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.prices {
+  font-weight: bold;
+}
+
+.price_old {
+  font-size: 12px;
+  font-weight: normal;
+  color: #ccc;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.price_new {
+  font-size: 16px;
+  color: #444;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.price_method {
+  color: rgb(255, 115, 0);
+}
+
+.card-footer {
+  border: none !important;
+  background-color: #fff !important;
+}
