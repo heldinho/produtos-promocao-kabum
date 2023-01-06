@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 const columnCards = [
   'col-xl-4',
@@ -15,23 +16,20 @@ const columnCards = [
 ];
 
 const data = require('./data/products_kabum.json');
-const limit = 6;
-const pages = Math.ceil(data.length / limit);
 
 export default function App() {
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(6);
   const [products, setProducts] = useState([]);
+
+  const pages = Math.ceil(data.length / limit);
 
   useEffect(() => {
     fnPagination(data, page, limit);
-  }, [page]);
+  }, [page, limit]);
 
-  const totalPage = () => {
-    const arrPages = [];
-    for (let i = 1; i <= pages; i++) {
-      arrPages.push(i);
-    }
-    return arrPages;
+  const fnLimit = event => {
+    setLimit(event.target.value);
   };
 
   const fnPagination = (items, pageActual, limitItems) => {
@@ -63,7 +61,24 @@ export default function App() {
         </div>
         <div className="col-6">
           <div className="d-flex justify-content-end">
-            <Pagination count={pages} page={page} onChange={fnChangePage} />
+            <div className="mr-3">
+              <FormControl size="small">
+                <InputLabel id="select-label">Limite</InputLabel>
+                <Select
+                  labelId="select-label"
+                  label="Limite"
+                  value={limit}
+                  onChange={fnLimit}>
+                  <MenuItem value={6}>6</MenuItem>
+                  <MenuItem value={10}>10</MenuItem>
+                  <MenuItem value={20}>20</MenuItem>
+                  <MenuItem value={100}>100</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <Pagination count={pages} page={page} onChange={fnChangePage} />
+            </div>
           </div>
         </div>
       </div>
